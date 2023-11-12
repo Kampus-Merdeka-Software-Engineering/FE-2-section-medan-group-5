@@ -11,7 +11,7 @@
   }
   
   header {
-    background-image: linear-gradient(rgba(211, 211, 211, 0.8), rgba(209, 209, 209, 0.8)), url("img/beach.jpg");
+    background-image: linear-gradient(rgba(211, 211, 211, 0.8), rgba(209, 209, 209, 0.8)), url("../assets/img/beach.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
