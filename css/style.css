@@ -36,7 +36,7 @@ header {
 }
 
 .navbar.scrolling-active {
-  background-color: #F3EEEA;
+  background-color: #ffff;
   padding: 30px 0 30px 0;
 }
 
@@ -67,11 +67,13 @@ header {
 }
 
 .navbar .box-navbar .menu .active a {
-  background-color: #B0A695;
+  background-color: #3085C3;
+  border-radius: 5px;
+  font-weight: 550;
 }
 
 .navbar .box-navbar .menu li a:hover {
-  background-color: #EBE3D5;
+  background-color: #DDF2FD;
   transition: all 0.3s ease;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
@@ -119,9 +121,9 @@ header {
 .hero .box-hero .box:nth-child(1) button {
   width: 180px;
   height: 50px;
-  background-color:#B0A695;
+  background-color:#3085C3;
   font-weight: bold;
-  color: black;
+  color: white;
   border: none;
   cursor: pointer;
   border-radius: 5px;
@@ -132,7 +134,8 @@ header {
 }
 
 .hero .box-hero .box:nth-child(1) button:hover {
-  background-color: #EBE3D5;
+  background-color: #DDF2FD;
+  color: black;
   transition: all 0.3s ease;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
@@ -168,25 +171,60 @@ header {
 .services .box-services .box i {
   font-size: 40px;
   margin-bottom: 10px;
-  color: #B0A695;
+  color: #265073;
 }
 
 .services .box-services .box p {
   font-weight: 100;
 }
 
-.pantai {
+.iklan {
+padding: 50px 0 100px 0;
+}
+
+.iklan .container {
+  background-color: #3085C3;
+  width: 80%;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  color: white;
+}
+
+.iklan .container .image img {
+  width: 350px;
+  height: 400px;
+}
+
+.iklan .container .text .title {
+  margin-bottom: 30px;
+}
+
+.iklan .container .text .label .content {
+  display: flex;
+  font-size: small;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.iklan .container .text .label .content .atas {
+  font-weight: bold;
+  font-size: medium;
+}
+
+.destinasi {
   padding: 50px 0 50px 0;
 }
 
-.pantai .box-pantai {
+.destinasi .box-destinasi {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
   row-gap: 50px;
 }
 
-.pantai .box-pantai .box {
+.destinasi .box-destinasi .box {
   text-align: center;
   color: black;
   transition: all 0.3s ease;
@@ -196,7 +234,7 @@ header {
   -o-transition: all 0.3s ease;
 }
 
-.pantai .box-pantai .box:hover {
+.destinasi .box-destinasi .box:hover {
   transform: translateY(-20px);
   -webkit-transform: translateY(-20px);
   -moz-transform: translateY(-20px);
@@ -204,7 +242,7 @@ header {
   -o-transform: translateY(-20px);
 }
 
-.pantai .box-pantai .box img {
+.destinasi .box-destinasi .box img {
   width: 100%;
   height: 200px;
   margin-bottom: 10px;
@@ -215,17 +253,17 @@ header {
   -o-border-radius: 5px;
 }
 
-.pantai .box-pantai .box p {
+.destinasi .box-destinasi .box p {
   font-weight: 300;
   margin-bottom: 10px;
 }
 
-.pantai .box-pantai .box button {
+.destinasi .box-destinasi .box button {
   width: 120px;
   height: 40px;
   border: none;
-  background-color: #B0A695;
-  color: black;
+  background-color: #3085C3;
+  color: white;
   font-weight: bold;
   border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -235,8 +273,9 @@ header {
   cursor: pointer;
 }
 
-.pantai .box-pantai .box button:hover {
-  background-color: #B0A695;
+.destinasi .box-destinasi .box button:hover {
+  background-color: #DDF2FD;
+  color: black;
   transition: all 0.3s ease;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
@@ -254,7 +293,7 @@ header {
 }
 
 .daftar .box-daftar h1 {
-  margin-bottom: 50px;
+  margin-bottom: 10px;
 }
 
 .daftar .box-daftar h3 {
@@ -298,7 +337,7 @@ header {
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
   cursor: pointer;
-  background-color: #B0A695;
+  background-color: #3085C3;
   color: white;
   padding-inline: 10px;
 }
@@ -345,7 +384,7 @@ header {
 
 .footer {
   padding: 50px 0 50px 0;
-  background-color: #F3EEEA;
+  background-color: #3085C3;
 }
 
 .footer .box-footer {
@@ -356,7 +395,7 @@ header {
 }
 
 .footer .box-footer .box {
-  color: black;
+  color: white;
 }
 
 .footer .box-footer .box:nth-child(2) {
@@ -367,7 +406,7 @@ header {
 
 .footer .box-footer .box:nth-child(2) a {
   text-decoration: none;
-  color: black;
+  color: white;
   font-weight: 200;
 }
 
@@ -485,7 +524,7 @@ header {
     justify-self: center;
   }
   
-  .pantai .box-pantai {
+  .destinasi .box-destinasi {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
 }
