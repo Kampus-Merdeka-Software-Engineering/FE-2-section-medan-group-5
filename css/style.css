@@ -351,7 +351,9 @@ padding: 50px 0 100px 0;
 
 .comment-post {
   width: 80%;
-  
+  border: 1px solid #3085C3;
+  padding: 20px 15px;
+  margin-bottom: 50px;
 }
 
 .comment-post .row .user-post {
@@ -366,7 +368,7 @@ padding: 50px 0 100px 0;
 }
 
 #formReply  {
-  padding: 50px 0 100px 0;
+  padding-bottom: 20px;
   width: 80%;
   margin-inline: auto;
 }
@@ -380,6 +382,31 @@ padding: 50px 0 100px 0;
 #formReply input{
   margin-bottom: 15px;
   
+}
+
+#formReply input[type="submit"] {
+  width: 120px;
+  height: 40px;
+  border: none;
+  background-color: #3085C3;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  cursor: pointer;
+}
+
+#formReply input[type="submit"]:hover {
+  background-color: #DDF2FD;
+  color: black;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
 }
 
 .footer {
