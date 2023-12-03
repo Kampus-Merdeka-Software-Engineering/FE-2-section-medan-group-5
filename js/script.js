@@ -1,3 +1,12 @@
+/* Preloader */
+
+document.addEventListener("DOMContentLoaded", function () {
+  setTimeout(function () {
+    document.querySelector(".spinner-wrapper").style.display = "none";
+    document.getElementById("main-content").style.display = "block";
+  }, 2000);
+});
+
 const menuBar = document.querySelector(".menu-bar");
 const menuNav = document.querySelector(".menu");
 
