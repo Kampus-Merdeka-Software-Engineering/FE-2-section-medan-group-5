@@ -242,7 +242,7 @@ header {
 }
 
 .iklan .container {
-  background-color: ##5271FF;
+  background-color: #5271FF;
   width: 80%;
   min-height: 70vh;
   display: flex;
@@ -488,6 +488,7 @@ header {
   padding: 5px;
   height: 100px;
   box-sizing: border-box;
+  border-radius: 10px;
 }
 
 #formReply .content .form-label input{
