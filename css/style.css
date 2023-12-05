@@ -242,6 +242,8 @@ header {
 }
 
 .iklan .container {
+  padding: 0 15px;
+  flex-wrap: wrap;
   background-color: #5271FF;
   width: 80%;
   min-height: 70vh;
@@ -347,9 +349,32 @@ header {
   -o-transition: all 0.3s ease;
 }
 
-* Promosi */
+/* Promosi */
 
-.promo {
+#promo .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.box-promo .box {
+  width: 100%;
+  overflow: hidden;
+}
+
+.box-promo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media screen and (max-width: 768px) {
+  #promo .container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* .promo {
   width: 100%;
   min-height: 50vh;
   display: flex;
@@ -374,7 +399,7 @@ header {
 .promo .box-promo .box img {
   width: 400px;
   padding-right: 10%;
-}
+} */
 
 /* Promosi */
 
@@ -459,7 +484,6 @@ header {
 
 .comment-post .row .description {
   font-size: 13px;
-  width: 70%;
 }
 
 #formReply {
@@ -497,8 +521,12 @@ header {
   border-radius: 10px 10px 10px 10px;
   padding: 10px 15px;
   margin: 6px 0;
-  width: 90%;
+  width: 85%;
   font-size: 0.8rem; 
+}
+
+#formReply .content .form-label .label{
+  width: 15%;
 }
 
 #formReply .content input[type="submit"] {
@@ -576,6 +604,40 @@ header {
   .hero .box-hero .box:nth-child(1) button {
     width: 150px;
   }
+}
+
+@media screen and (max-width: 425px) {
+  .iklan .container .image img {
+    width: 250px;
+  }
+
+  /* .promo .box-promo .box img {
+    width: 300px;
+  } */
+
+  #formReply .content input[type="submit"] {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .iklan .container .image img {
+    width: 200px;
+  }
+  
+  /* .promo .box-promo .box img {
+    width: 260px;
+  } */
+
+  #formReply .content input[type="submit"] {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  /* .promo .box-promo .box img {
+    width: 300px;
+  } */
 }
 
 @media screen and (max-width: 990px) {
