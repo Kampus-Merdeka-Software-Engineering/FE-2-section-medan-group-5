@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" id="home">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Font Awesome -->
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+  integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+  />
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  
+  <!-- Font Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet" />
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css"/>
+  <title>Traveland</title>
+  <link rel="icon" type="icon" href="assets/img/logo-img.png">
+</head>
+<body>
+    <header class="h-login">
+        <div class="navbar">
+            <div class="container">
+              <div class="box-navbar">
+                <div class="logo">
+                  <h1><span class="material-symbols-outlined">
+                    near_me
+                  </span> Traveland</h1>
+                </div>
+              </div>
+            </div>
+          </div>
+        <div class="hero">
+            <div class="container">
+              <div class="box-hero">
+                <form id="loginForm" action="action_page.php" method="post">
+                    <div class="imgcontainer">
+                      <img src="assets/img/user.jpg" alt="Avatar" class="avatar">
+                    </div>
+                  
+                    <div class="container">
+                      <label for="uname"><b>Username</b></label>
+                      <input type="text" placeholder="Enter Username" name="uname" required>
+                        
+                      <label for="email"><b>Email</b></label>
+                      <input type="text" placeholder="Enter Email" name="email" required>
+
+                      <label for="psw"><b>Password</b></label>
+                      <input type="password" placeholder="Enter Password" name="psw" required>
+                  
+                    </div>
+                  
+                    <div class="container" style="background-color:#f1f1f1">
+                      <button id="btnregis" type="submit" class="btnLogin">Register</button>
+                    </div>
+                  </form>
+              </div>
+            </div>
+        </header>
+  
+</body>
+</html>

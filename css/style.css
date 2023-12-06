@@ -449,6 +449,15 @@ header {
   margin-bottom: 50px;
 }
 
+.comment-post .row {
+	border: 1px solid black;
+	padding: 5px;
+}
+
+.comment-post .row:not(:last-child) {
+	margin-bottom:20px;
+}
+
 .comment-post .row .user-post {
   display: flex;
   gap: 10px;
