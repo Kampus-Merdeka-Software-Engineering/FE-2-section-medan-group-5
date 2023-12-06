@@ -30,8 +30,6 @@ function fetchData() {
   .then(response => response.json())
   .then(data => {
     displayData(data);
-    console.log('Test');
-    console.log(data);
   })
   .catch(error => {
     console.error('Error fetching data:', error);
@@ -39,20 +37,18 @@ function fetchData() {
 }
 
 function displayData(data) {
-  console.log('cek')
   const dataContainer = document.getElementById('comment-post');
   dataContainer.innerHTML = ``
   for (let i = 0; i < data.results.length; i++) {
-    // ini isinya
-    console.log('test')
     const itemDiv = document.createElement('div');
     itemDiv.classList.add('row')
     
-    // Isi elemen div dengan informasi dari item
     itemDiv.innerHTML = `
     <div class="user-post">
     <div class="image-user">
-    <img src="assets/img/beach.jpg" width="33">
+    <span class="material-symbols-outlined">
+    account_circle
+    </span>
     </div>
     <div class="info-user">
     <p>${data.results[i].name}</p>
@@ -62,9 +58,8 @@ function displayData(data) {
     <div class="description">
     ${data.results[i].content}
     </div>
-     `;
+    `;
     
-    // Tambahkan elemen div ke dalam container
     dataContainer.appendChild(itemDiv);
   }
 }
