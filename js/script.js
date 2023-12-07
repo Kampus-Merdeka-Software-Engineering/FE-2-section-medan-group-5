@@ -23,7 +23,7 @@ window.addEventListener("scroll", () => {
 });
 
 function fetchData() {
-  const apiUrl = 'http://localhost:3001/api/v1/comment';
+  const apiUrl = 'https://be-2-section-medan-group-5-production-f88b.up.railway.app/api/v1/comment';
   fetch(apiUrl)
   .then(response => response.json())
   .then(data => {
@@ -70,7 +70,7 @@ document.getElementById("formReply").addEventListener("submit", function (event)
     "email": document.getElementById("email").value,
   });
   
-  fetch("http://localhost:3001/api/v1/comment", {
+  fetch("https://be-2-section-medan-group-5-production-f88b.up.railway.app/api/v1/comment", {
   method: "POST",
   headers: {"Content-Type": "application/json"},
   body: raw,
