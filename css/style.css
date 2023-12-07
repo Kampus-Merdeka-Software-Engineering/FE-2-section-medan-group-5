@@ -739,6 +739,26 @@ input[type=text], input[type=password] {
   opacity: 0.8;
 }
 
+#btnregis {
+  border: none;
+  width: 100%;
+  min-height: 40px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  cursor: pointer;
+  background-color: #3085C3;
+  color: white;
+  padding-inline: 10px;
+}
+
+/* Add a hover effect for buttons */
+#btnregis:hover {
+  opacity: 0.8;
+}
+
 /* Extra style for the cancel button (red) */
 .cancelbtn {
   width: auto;

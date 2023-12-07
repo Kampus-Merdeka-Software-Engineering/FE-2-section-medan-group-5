@@ -3,7 +3,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   setTimeout(function () {
     document.querySelector(".spinner-wrapper").style.display = "none";
-    document.getElementById("main-content").style.display = "block";
   }, 2000);
   fetchData();
 });
@@ -18,14 +17,13 @@ menuBar.addEventListener("click", () => {
 const navBar = document.querySelector(".navbar");
 
 window.addEventListener("scroll", () => {
-  console.log(window.scrollY);
   const windowPosition = window.scrollY > 0;
   navBar.classList.toggle("scrolling-active", windowPosition);
   menuNav.classList.remove("menu-active");
 });
 
 function fetchData() {
-  const apiUrl = 'http://localhost:3001/api/v1/comment/';
+  const apiUrl = 'http://localhost:3001/api/v1/comment';
   fetch(apiUrl)
   .then(response => response.json())
   .then(data => {
@@ -38,7 +36,6 @@ function fetchData() {
 
 function displayData(data) {
   const dataContainer = document.getElementById('comment-post');
-  dataContainer.innerHTML = ``
   for (let i = 0; i < data.results.length; i++) {
     const itemDiv = document.createElement('div');
     itemDiv.classList.add('row')
@@ -64,3 +61,29 @@ function displayData(data) {
   }
 }
 
+document.getElementById("formReply").addEventListener("submit", function (event) {
+  event.preventDefault();
+  
+  var raw = JSON.stringify({
+    "content": document.getElementById("content").value,
+    "name": document.getElementById("nama").value,
+    "email": document.getElementById("email").value,
+  });
+  
+  fetch("http://localhost:3001/api/v1/comment", {
+  method: "POST",
+  headers: {"Content-Type": "application/json"},
+  body: raw,
+  redirect: 'follow'
+})
+.then(response => response.json())
+.then(data => {
+  displayData(data)
+  document.getElementById("content").value = ""
+  document.getElementById("nama").value = ""
+  document.getElementById("email").value = ""
+})
+.catch(error => {
+  console.error("Error:", error);
+});
+});
