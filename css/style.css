@@ -304,6 +304,8 @@ header {
   -moz-transition: all 0.3s ease;
   -ms-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
+  box-shadow: 1px 3px 10px 1px lightgray;
+  padding: 10px;
 }
 
 .destinasi .box-destinasi .box:hover {
@@ -398,8 +400,6 @@ header {
 .daftar .box-daftar h3 {
   font-weight: 400;
   margin-bottom: 10px;
-  animation: animasi;
-  -webkit-animation: animasi 2s infinite;
 }
 
 @keyframes animasi {
@@ -707,6 +707,14 @@ header {
   .destinasi .box-destinasi {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
+}
+
+.destinasi .box-destinasi .box h1 {
+  font-size: medium;
+}
+
+.destinasi .box-destinasi .box p {
+  font-size: 12px;
 }
 
 /* Bordered form */
