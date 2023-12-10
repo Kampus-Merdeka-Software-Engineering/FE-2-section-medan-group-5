@@ -42,17 +42,17 @@
         <div class="hero">
             <div class="container">
               <div class="box-hero">
-                <form id="loginForm" action="action_page.php" method="post">
+                <div id="loginForm">
                     <div class="imgcontainer">
                       <img src="assets/img/user.jpg" alt="Avatar" class="avatar" width="5%" height="5%">
                     </div>
                   
                     <div class="container">
-                      <label for="uname"><b>Username</b></label>
-                      <input type="text" placeholder="Enter Username" name="uname" required>
+                      <label for="uname"><b>Email</b></label>
+                      <input type="email" placeholder="Enter Email" id="email" name="email" required>
                   
                       <label for="psw"><b>Password</b></label>
-                      <input type="password" placeholder="Enter Password" name="psw" required>
+                      <input type="password" placeholder="Enter Password" id="password" name="psw" required>
                   
                       <label>
                         <input type="checkbox" checked="checked" name="remember"> Remember me
@@ -60,13 +60,50 @@
                     </div>
                   
                     <div class="container" style="background-color:#f1f1f1">
-                      <button id="btnLogin" type="submit" class="btnLogin">Login</button>
+                      <!-- <button id="btnLogin" type="submit" class="btnLogin">Login</button> -->
+                      <input id="btnLogin" type="submit" value="Login">
                       <span class="psw">Forgot <a href="#">password?</a></span>
                     </div>
-                  </form>
+                  </div>
               </div>
             </div>
         </header>
   
+        <script>
+          const login = document.getElementById("btnLogin")
+          
+          login.addEventListener("click", () => {
+            var raw = JSON.stringify({
+              "email": document.getElementById("email").value,
+              "password": document.getElementById("password").value,
+            });
+            
+            fetch("https://be-2-section-medan-group-5-production-f88b.up.railway.app/api/v1/user/auth/login", {
+              method: "POST",
+              headers: {"Content-Type": "application/json"},
+              body: raw,
+              redirect: 'follow'
+            })
+            .then(response => response.json())
+            .then(data => {
+              console.log(data.status)
+              document.getElementById("email").value = ""
+              document.getElementById("password").value = ""
+              if (data.status != 200) {
+                alert(data.message)
+                location.reload()
+              } else {
+                alert("Berhasil Masuk")
+                window.location.href = "index.html"
+              }
+            })
+            .catch(error => {
+              console.error("Error:", error);
+              alert("Error : ", error)
+              location.reload()
+            });
+          });
+          
+        </script>
 </body>
 </html>

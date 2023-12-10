@@ -22,6 +22,8 @@ window.addEventListener("scroll", () => {
   menuNav.classList.remove("menu-active");
 });
 
+
+
 function fetchData() {
   const apiUrl = 'https://be-2-section-medan-group-5-production-f88b.up.railway.app/api/v1/comment';
   fetch(apiUrl)

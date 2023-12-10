@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" id="home">
+<html lang="en" id="regis">
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -27,45 +27,75 @@
   <link rel="icon" type="icon" href="assets/img/logo-img.png">
 </head>
 <body>
-    <header class="h-login">
-        <div class="navbar">
+  <header class="h-login">
+    <div class="navbar">
+      <div class="container">
+        <div class="box-navbar">
+          <div class="logo">
+            <h1><span class="material-symbols-outlined">
+              near_me
+            </span> Traveland</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero">
+      <div class="container">
+        <div class="box-hero">
+          <div id="regisForm">
+            <div class="imgcontainer">
+              <img src="assets/img/user.jpg" alt="Avatar" class="avatar">
+            </div>
+            
             <div class="container">
-              <div class="box-navbar">
-                <div class="logo">
-                  <h1><span class="material-symbols-outlined">
-                    near_me
-                  </span> Traveland</h1>
-                </div>
-              </div>
+              <label for="uname"><b>Username</b></label>
+              <input id="name" type="text" placeholder="Enter Username" name="uname" required>
+              
+              <label for="email"><b>Email</b></label>
+              <input id="email" type="text" placeholder="Enter Email" name="email" required>
+              
+              <label for="psw"><b>Password</b></label>
+              <input id="password" type="password" placeholder="Enter Password" name="psw" required>
+              
+            </div>
+            
+            <div class="container" style="background-color:#f1f1f1">
+              <input id="btnRegis" type="submit" value="Register">
+              <!-- <button id="btnRegis" type="submit" class="btnLogin">Register</button> -->
             </div>
           </div>
-        <div class="hero">
-            <div class="container">
-              <div class="box-hero">
-                <form id="loginForm" action="action_page.php" method="post">
-                    <div class="imgcontainer">
-                      <img src="assets/img/user.jpg" alt="Avatar" class="avatar">
-                    </div>
-                  
-                    <div class="container">
-                      <label for="uname"><b>Username</b></label>
-                      <input type="text" placeholder="Enter Username" name="uname" required>
-                        
-                      <label for="email"><b>Email</b></label>
-                      <input type="text" placeholder="Enter Email" name="email" required>
-
-                      <label for="psw"><b>Password</b></label>
-                      <input type="password" placeholder="Enter Password" name="psw" required>
-                  
-                    </div>
-                  
-                    <div class="container" style="background-color:#f1f1f1">
-                      <button id="btnregis" type="submit" class="btnLogin">Register</button>
-                    </div>
-                  </form>
-              </div>
-            </div>
-        </header>
-  
-</body>
-</html>
+        </div>
+      </div>
+    </header>
+    <script>
+      const regis = document.getElementById("btnRegis")
+      
+      regis.addEventListener("click", () => {
+        var raw = JSON.stringify({
+          "name": document.getElementById("name").value,
+          "email": document.getElementById("email").value,
+          "password": document.getElementById("password").value,
+        });
+        
+        fetch("https://be-2-section-medan-group-5-production-f88b.up.railway.app/api/v1/user/auth/register", {
+          method: "POST",
+          headers: {"Content-Type": "application/json"},
+          body: raw,
+          redirect: 'follow'
+        })
+        .then(response => response.json())
+        .then(data => {
+          document.getElementById("name").value = ""
+          document.getElementById("email").value = ""
+          document.getElementById("password").value = ""
+          alert("Akun berhasil terdaftar")
+          window.location.href = "index.html"
+        })
+        .catch(error => {
+          console.error("Error:", error);
+        });
+      });
+      
+    </script>
+  </body>
+  </html>

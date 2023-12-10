@@ -122,13 +122,19 @@ header {
 .navbar .box-navbar .menu li a {
   text-decoration: none;
   color: black;
+  font-size: 12px;
   padding: 10px 15px 10px 15px;
 }
 
 .navbar .box-navbar .menu .active a {
   background-color: #3085C3;
+  color: white;
+  font-size: 12px;
   border-radius: 5px;
   font-weight: 550;
+}
+.navbar .box-navbar .menu .active a:hover {
+  color: black;
 }
 
 .navbar .box-navbar .menu li a:hover {
@@ -634,7 +640,7 @@ header {
     -moz-transition: all 0.3s ease;
     -ms-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
-    background-color: #0050b3;
+    background-color: white;
   }
   
   .navbar .box-navbar .menu.menu-active {
@@ -709,7 +715,7 @@ header {
 }
 
 /* Full-width inputs */
-input[type=text], input[type=password] {
+input[type=text], input[type=password], input[type=email] {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -739,7 +745,7 @@ input[type=text], input[type=password] {
   opacity: 0.8;
 }
 
-#btnregis {
+#btnRegis {
   border: none;
   width: 100%;
   min-height: 40px;
@@ -755,7 +761,7 @@ input[type=text], input[type=password] {
 }
 
 /* Add a hover effect for buttons */
-#btnregis:hover {
+#btnRegis:hover {
   opacity: 0.8;
 }
 
